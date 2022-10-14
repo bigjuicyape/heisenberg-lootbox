@@ -11,6 +11,7 @@ let hankel2 = document.getElementById("num-hank2");
 let btn2 = document.getElementById("btnopen");
 let btn3 = document.getElementById("open3");
 let btn4 = document.getElementById("open4");
+let farm1 = document.getElementById("farm");
 
 p1el.addEventListener("click", selectp1());
 
@@ -41,6 +42,7 @@ let numhank2 = 0;
 let huell= 0;
 document.getElementById("num-hank").innerHTML = `${numhank}`;
 document.getElementById("num-chicken").innerHTML = `${numchicken}`;
+document.getElementById("num-huell").innerHTML = `${huell}`;
 
 fish.addEventListener("click", grub);
 function grub() { 
@@ -116,23 +118,14 @@ function open2() {
     btn3.addEventListener("click", open3)
     function open3() {
         if (numchicken >= 5){
-            numhank++;
-            numhank++;
-            numhank++;
-            numchicken--;
-            numchicken--;
-            numchicken--;
-            numchicken--;
-            numchicken--;
+            numhank = numhank + 5;
+            numchicken = numchicken - 10;
             document.getElementById("num-hank").innerHTML = `${numhank}`;
             document.getElementById("num-chicken").innerHTML = `${numchicken}`;
-        } else {
-                alert('need 5 chickens')
-            }}
+        }}
 btn4.addEventListener("click", open4)
     function open4() {
-        if (numMeth >= 10 && numMeth >= 10){
-        numMeth--;
+        if (numMeth >= 10 && num$ >= 10){
         numMeth--;
         numMeth--;
         numMeth--;
@@ -159,6 +152,44 @@ btn4.addEventListener("click", open4)
         document.getElementById("num-meth").innerHTML = `${numMeth}`;
         document.getElementById("num-chicken").innerHTML = `${numchicken}`;
         document.getElementById("num-$").innerHTML = `${num$}`;
-            } else {
-            alert('need 10 $ and 10 meth')
             }}
+
+
+setInterval(huell1, 500);
+
+function huell1(){
+    numMeth = numMeth + huell;
+    document.getElementById("num-meth").innerHTML = `${numMeth}`;
+}
+
+setInterval(huell3, 400);
+
+function huell3(){
+    num$ = num$ + huell;
+    document.getElementById("num-$").innerHTML = `${num$}`;
+}
+
+setInterval(hank5, 3200);
+
+function hank5(){
+    numhank = numhank + numhank2;
+    document.getElementById("num-hank").innerHTML = `${numhank}`;
+}
+
+let numfarm = 0;
+document.getElementById("chickfarm").innerHTML = `${numfarm}`;
+
+farm1.addEventListener("click", farm2)
+function farm2() {
+if (num$ >= 100){
+num$ = num$ - 100  
+numfarm++;
+document.getElementById("num-$").innerHTML = `${num$}`;
+document.getElementById("farm").innerHTML = `${numfarm}`;
+}}
+setInterval(farming, 200);
+
+function farming(){
+    numchicken = numchicken + numfarm;
+    document.getElementById("num-chicken").innerHTML = `${numchicken}`;
+}
